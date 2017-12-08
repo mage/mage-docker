@@ -1,7 +1,3 @@
-#!/bin/sh
+#!/bin/bash
 
-if [ "${DOCKER_TAG}" != "latest" ]; then
-	docker build --build-arg "node_version=${DOCKER_TAG}" -t "${IMAGE_NAME}" .
-else
-	docker build -t "${IMAGE_NAME}" .
-fi
+make build
